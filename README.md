@@ -28,7 +28,7 @@ A simple Python script to log historical Wordle scores into a CSV file for track
 ### Logging a Wordle Score
 
 ```sh
-python log_score.py <name> "<wordle_output>" [--date YYYY-MM-DD]
+python log_score.py <name> "<wordle_output>"
 ```
 
 - `<name>`: The name of the player
