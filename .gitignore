@@ -1,6 +1,7 @@
 # My stuff
 *.wordle_watcher/
 wordle_scores.csv
+env.py
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

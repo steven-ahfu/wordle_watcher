@@ -18,6 +18,10 @@ A simple Python script to log historical Wordle scores into a CSV file for track
    ```sh
    pip install -r requirements.txt
    ```
+4. Rename env-example.py to env.py:
+   ```sh
+   mv env-example.py env.py
+   ```
 
 ## Usage
 
@@ -32,18 +36,32 @@ python log_score.py <name> "<wordle_output>" [--date YYYY-MM-DD]
 - `--date YYYY-MM-DD` (optional): The date of the game; defaults to today if not provided
 
 Example:
+
 ```sh
-python log_score.py Alice "Wordle 1360 5/6*\n\n🟩⬛⬛⬛🟩\n🟩🟩🟩⬛🟩\n🟩🟩🟩⬛🟩\n🟩🟩🟩⬛🟩\n🟩🟩🟩🟩🟩\n\nWordleBot\nSkill 99/99\nLuck 45/99"
+python log_score.py Alice """Wordle 1360 5/6*\n\n🟩⬛⬛⬛🟩\n🟩🟩🟩⬛🟩\n🟩🟩🟩⬛🟩\n🟩🟩🟩⬛🟩\n🟩🟩🟩🟩🟩\n\nWordleBot\nSkill 99/99\nLuck 45/99"""
+```
+
+### Analyzing the Scores
+
+```sh
+python analyze_scores.py
+
+Most unlucky: Joshua, 34.5
+Lucky mf: Davon, 32.0
+Most skilled: Shlomo, 20.0
+Garbage: Junqi, 0.3
 ```
 
 ## Running Tests
 
 To run all tests:
+
 ```sh
 python -m unittest discover
 ```
 
 To run a specific test:
+
 ```sh
 python -m unittest test_log_score.TestLogScore.test_valid_wordle_output
 ```
@@ -66,6 +84,7 @@ This project uses `pre-commit` to automatically run tests and linting before com
 Now, every time you commit, the hooks will run automatically to check for linting issues and run all tests.
 
 To manually run the hooks:
+
 ```sh
 pre-commit run --all-files
 ```
